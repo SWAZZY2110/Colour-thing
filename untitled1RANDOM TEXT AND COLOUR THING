@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 18 20:19:07 2022
+
+@author: priyankadas
+"""
+
+from tkinter import *
+import random
+
+root = Tk()
+root.geometry("600x400")
+root.title("Random Text and Colour thingy")
+root.config(bg = "white")
+
+label = Label(root, font = ("Arial", 40))
+label.pack()
+class gaming():
+    def __init__(self):
+        score = 0
+    def updateGame(self):
+        colour_list = ["BLACK", "PINK", "YELLOW", "ORANGE", "RED", "BLUE", "GREEN"]
+        random_colour = random.randint(0, 6)
+        colour_list1 = ["black", "pink", "yellow", "orange", "red", "blue", "green"]
+        random_colour1 = random.randint(0, 6)
+        label["text"] = colour_list[random_colour]
+        label["fg"] = colour_list1[random_colour1]
+        
+obj = gaming()
+
+
+btn = Button(root, text = "Click to game", command = obj.updateGame)
+btn.pack()
+root.mainloop()
